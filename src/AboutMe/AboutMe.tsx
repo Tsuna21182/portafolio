@@ -4,7 +4,7 @@ import { Redes, ScrollFadeIn } from "../components";
 function AboutMe() {
   return (
     <ScrollFadeIn>
-      <section className="text-white mt-10">
+      <section id="AboutMe" className="text-white mt-10">
         <section className="grid md:grid-cols-2 items-center">
           <motion.article
             initial={{ opacity: 0, y: 100 }}

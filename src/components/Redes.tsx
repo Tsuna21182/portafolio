@@ -18,12 +18,18 @@ type IconItem = {
   color: string;
 };
 
-const initialIcons = [
+const initialIcons: IconItem[] = [
   { id: "facebook", icon: faFacebook, color: "#1877F2" },
   { id: "instagram", icon: faInstagram, color: "#E1306C" },
   { id: "github", icon: faGithub, color: "#fafafa" },
   { id: "twitter", icon: faTwitter, color: "#1DA1F2" },
 ];
+
+const spring: Transition = {
+  type: "spring",
+  damping: 50,
+  stiffness: 800,
+};
 
 function Redes() {
   const [icons, setIcons] = useState<IconItem[]>(initialIcons);
@@ -33,21 +39,25 @@ function Redes() {
   }
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIcons(shuffle(icons)), 2000);
+    const timeout = setTimeout(() => setIcons(shuffle(icons)), 3000);
     return () => clearTimeout(timeout);
   }, [icons]);
 
   return (
-    <div style={container}>
+    <div className="flex flex-wrap justify-center items-center gap-3 py-8">
       {icons.map(({ id, icon, color }) => (
         <motion.div
           key={id}
           layout
           transition={spring}
-          style={{
-            ...item,
-            color,
-          }}
+          className="w-[60px] h-[60px] flex items-center justify-center 
+                     rounded-xl cursor-pointer 
+                     bg-white/5 backdrop-blur-md 
+                     border border-white/10 
+                     shadow-[0_4px_24px_rgba(155,110,255,0.1)] 
+                     hover:shadow-[0_0_12px_#9B6EFF] 
+                     transition duration-300 ease-in-out"
+          style={{ color }}
         >
           <FontAwesomeIcon icon={icon} size="2x" />
         </motion.div>
@@ -57,30 +67,3 @@ function Redes() {
 }
 
 export default Redes;
-
-const spring: Transition = {
-  type: "spring",
-  damping: 20,
-  stiffness: 300,
-};
-
-const container: React.CSSProperties = {
-  display: "flex",
-  gap: 12,
-  justifyContent: "center",
-  alignItems: "center",
-  flexWrap: "wrap",
-  padding: "2rem",
-};
-
-const item: React.CSSProperties = {
-  backgroundColor: "rgba(255, 255, 255, 0.1)",
-  backdropFilter: "blur(10px)",
-  width: 60,
-  height: 60,
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderRadius: "12px",
-  cursor: "pointer",
-};

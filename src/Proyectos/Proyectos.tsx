@@ -8,10 +8,10 @@ function Proyectos() {
 
   return (
     <ScrollFadeIn>
-      <section className="mt-10 text-white">
+      <section id="Proyectos" className="mt-10 text-white">
         <h2 className=" text-4xl font-semibold">Proyectos Destacados</h2>
         <p>Una selección de mis trabajos más recientes y relevantes</p>
-        <div className=" bg-gradient-to-br from-BackgroundCard to-BackgroundBright p-10 grid grid-cols-1 md:grid-cols-3 gap-10 rounded-2xl">
+        <div className=" bg-[#111111] p-10 grid grid-cols-1 md:grid-cols-3 gap-10 rounded-2xl">
           {proyectos.map((card) => (
             <motion.div
               key={card.id}

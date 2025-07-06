@@ -4,7 +4,10 @@ import { motion } from "motion/react";
 function Header() {
   return (
     <ScrollFadeIn>
-      <header className="glass-card text-TextTitle p-5 rounded-3xl flex flex-col gap-10 items-center">
+      <header
+        id="inicio"
+        className="glass-card text-TextTitle p-5 rounded-3xl flex flex-col gap-10 items-center"
+      >
         <Btn
           name={"download cv"}
           className={"bg-amber-500 hover:bg-amber-600"}

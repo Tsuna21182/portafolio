@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 
 const links = [
-  { href: "/", label: "Inicio" },
-  { href: "/Proyectos", label: "Proyectos" },
-  { href: "/AboutMe", label: "Sobre Mi" },
-  { href: "/Contacto", label: "Contactame" },
+  { href: "#inicio", label: "Inicio" },
+  { href: "#Proyectos", label: "Proyectos" },
+  { href: "#AboutMe", label: "Sobre Mi" },
+  { href: "#Contacto", label: "Contactame" },
 ];
 
 function NavBar() {
